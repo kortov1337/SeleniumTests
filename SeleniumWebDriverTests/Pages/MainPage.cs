@@ -46,6 +46,10 @@ namespace SeleniumWebDriverTests.Pages
         [FindsBy(How = How.XPath, Using = ".//button[@type='submit' and text()='Добавить пост']")]
         private IWebElement submitPostButton;
 
+      
+        [FindsBy(How=How.ClassName, Using = "b - user - menu__logout")]
+        private IWebElement logoutButton;
+
         public MainPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -62,11 +66,19 @@ namespace SeleniumWebDriverTests.Pages
         {
             buttonAddPost.Click();
         }
+
         public void Login(string username, string password)
         {
             usernameTextbox.SendKeys(username);
             passwordTextbox.SendKeys(password);
             buttonSubmit.Click();
+        }
+
+        public void LogOut()
+        {
+            logoutButton.Click();
+            IAlert alert = driver.SwitchTo().Alert();
+            alert.Accept();
         }
 
         public void FillPost(PostData data)

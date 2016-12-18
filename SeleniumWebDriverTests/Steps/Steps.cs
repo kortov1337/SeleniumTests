@@ -30,11 +30,9 @@ namespace SeleniumWebDriverTests
         {
             try
             {
-                driver.Navigate().GoToUrl("http://pikabu.ru");
-                driver.FindElement(By.ClassName("b-user-menu__logout")).Click();
-                IAlert alert = driver.SwitchTo().Alert();
-                alert.Accept();
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+                Pages.MainPage mainPage = new Pages.MainPage(driver);
+                mainPage.OpenPage();
+                mainPage.LogOut();             
             }
             catch
             {

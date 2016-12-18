@@ -74,8 +74,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DDriver.cs" />
-    <Compile Include="LoggingTest.cs" />
-    <Compile Include="NUnitTests.cs" />
+    <Compile Include="Tests\NUnitTests.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Pages\PostPage.cs" />
     <Compile Include="Pages\SettingsPage.cs" />
@@ -86,7 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Steps.cs" />
+    <Compile Include="Steps\Steps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
